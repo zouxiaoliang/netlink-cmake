@@ -1,0 +1,8 @@
+MODULE_NAME := @kernel_module_name@
+
+MAIN_OBJ := module.o
+MUDULE_OBJS := @module_source_string@
+
+obj-m := $(MODULE_NAME).o
+
+$(MODULE_NAME)-y := $(MAIN_OBJ) $(MUDULE_OBJS)
