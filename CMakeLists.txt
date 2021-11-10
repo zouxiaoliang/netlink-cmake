@@ -5,6 +5,7 @@ project(netlink-cmake LANGUAGES CXX C)
 set(CMAKE_CXX_STANDARD 11)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 option(BUILD_HELLOWORLD "build helloworld demo" ON)
+option(BUILD_KERNEL_HELLOWORLD "build helloworld kernel module demo" ON)
 
 include(ExternalProject)
 
@@ -100,7 +101,10 @@ function(helloworldMain)
 endfunction()
 
 libNetlinkUserspaceMain()
-libNetlinkKerenlMain()
+
+if (BUILD_KERNEL_HELLOWORLD)
+    libNetlinkKerenlMain()
+endif()
 
 if (BUILD_HELLOWORLD)
     helloworldMain()

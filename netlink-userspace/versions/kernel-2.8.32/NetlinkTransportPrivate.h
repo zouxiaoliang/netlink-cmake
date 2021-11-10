@@ -199,8 +199,8 @@ private:
     /**
      * @brief m_kernel_msg 内核消息发送与接受缓冲区
      */
-    Buffer<1024> m_recv_buffer;
-    Buffer<1024> m_send_buffer;
+    Buffer<4096 * 2> m_recv_buffer;
+    Buffer<4096 * 2> m_send_buffer;
 
     /**
      * @brief m_proto_id 与驱动层协商的协议id
