@@ -48,7 +48,7 @@ function(libNetlinkKerenlMain)
     message(STATUS "kernel_dir: ${kernel_dir}")
     find_file(kernel_makefile NAMES Makefile PATHS ${kernel_dir} NO_DEFAULT_PATH)
     if (NOT kernel_makefile)
-        message(FATAL_ERROR "There is no makefile in ${kernel_dir}")
+        message(STATUS "There is no makefile in ${kernel_dir}")
     endif()
 
     set(KERNEL_MODULE_DIR "${CMAKE_CURRENT_SOURCE_DIR}/netlink-kernel")
